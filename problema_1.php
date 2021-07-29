@@ -26,7 +26,17 @@ for ($i=100; $i <= 999  ; $i++) {
         }
     }
 }
+//comprobar el numero mayor
+$numMayor;
+$parejas;
+$numMayor = $arreglo[0];
 
 for ($i=0; $i < count($arreglo) ; $i++) { 
-    echo "<ol>". "Los pares $pares[$i] dan".$arreglo[$i] ."</ol>";
+
+    if( $arreglo[$i] > $numMayor){
+        $numMayor = $arreglo[$i]; 
+        $parejas = $pares[$i];
+    }
 }
+echo "<h1>". "Los pares $parejas dan como resultado el palíndromo: ".$numMayor."</h1>";
+
