@@ -64,13 +64,13 @@ echo "<h1>". "Los factores $parejas dan como resultado el palíndromo: ".$numMay
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Número palindrómico</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-auto">
                 <?php
                 $mayor = 0;
                 $arreglo = [];
@@ -88,10 +88,10 @@ echo "<h1>". "Los factores $parejas dan como resultado el palíndromo: ".$numMay
                             $mayor = $res;
 
                             $arreglo[$cont] = $mayor;
-                            $pares[$cont] = "$j e $i";
+                            $pares[$cont] = "$j y $i";
                             $cont++;
 
-                            echo "<table>";
+                            echo "<table border=1>";
 
                             echo "<tr>";
                             echo "<th>Palíndromo<th>";
@@ -109,7 +109,7 @@ echo "<h1>". "Los factores $parejas dan como resultado el palíndromo: ".$numMay
                 }
                 ?>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-8">
                 <?php
 
                 $numMayor;
@@ -123,7 +123,7 @@ echo "<h1>". "Los factores $parejas dan como resultado el palíndromo: ".$numMay
                         $parejas = $pares[$i];
                     }
                 }
-                echo "<h1>" . "Los factores $parejas dan como resultado el palíndromo: " . $numMayor . "</h1>";
+                echo "<h1>" . "Los factores $parejas dan como resultado el palíndromo mayor: " . $numMayor . "</h1>";
                 ?>
             </div>
         </div>
