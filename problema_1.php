@@ -6,55 +6,6 @@ de dos dígitos es 9009, ya que se obtiene multiplicando 91 x 99.
 Encuentre un el palíndromo más grande formado por números de 3 dígitos.
 */
 
-/*$mayor = 0;
-$arreglo = [];
-$pares=[];
-$cont = 0;
-
-/*Como son numeros de tres cifras inicie mis ciclos desde 100 hasta 999
-for ($i=100; $i <= 999  ; $i++) { 
-
-    for ($j=100; $j <= 999 ; $j++) { 
-        $res = $i * $j;
-
-        $reversa = strrev($res);
-        if(strcmp($res,$reversa)==0 && $res > $mayor ) {
-
-            $mayor = $res;
-            
-            $arreglo[$cont] = $mayor;
-            $pares[$cont] = "$j e $i";
-            $cont++;
-
-            echo "<table border=1>";
-
-            echo "<tr>";
-                echo "<th>Palíndromo<th>";
-                echo "<th> Factores<th>";
-            echo "</tr>";
-
-            echo "<tr>";
-                echo "<td>".$res."<td>";
-                echo "<td> A = $i X B = $j <td>";
-            echo "</tr>";
-            //echo "Op: ". $res . " A = $i X B = $j PAL: " .$mayor. "<br>";
-            echo "</table>";
-        }
-    }
-}
-//comprobar el numero mayor
-$numMayor;
-$parejas;
-$numMayor = $arreglo[0];
-
-for ($i=0; $i < count($arreglo) ; $i++) { 
-
-    if( $arreglo[$i] > $numMayor){
-        $numMayor = $arreglo[$i]; 
-        $parejas = $pares[$i];
-    }
-}
-echo "<h1>". "Los factores $parejas dan como resultado el palíndromo: ".$numMayor."</h1>";*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,19 +27,19 @@ echo "<h1>". "Los factores $parejas dan como resultado el palíndromo: ".$numMay
                 $arreglo = [];
                 $pares = [];
                 $cont = 0;
-                /*Como son numeros de tres cifras inicie mis ciclos desde 100 hasta 999*/
+                /*Como son numeros de tres cifras inicie dos ciclos desde 100 hasta 999*/
                 for ($i = 100; $i <= 999; $i++) {
 
                     for ($j = 100; $j <= 999; $j++) {
                         $res = $i * $j;
 
-                        $reversa = strrev($res);
-                        if (strcmp($res, $reversa) == 0 && $res > $mayor) {
+                        $reversa = strrev($res); //PHP trae funciones para invertir cadenas, en este caso numeros
+                        if (strcmp($res, $reversa) == 0 && $res > $mayor) { //Así mismo, existe una funcion de comparacion que devuelve '0', en caso de ser identicas.
+                            //Como devuelve muchos valores y lo que me interesa son los mayores, redusco mi rango de busqueda.
+                            $mayor = $res; 
 
-                            $mayor = $res;
-
-                            $arreglo[$cont] = $mayor;
-                            $pares[$cont] = "$j y $i";
+                            $arreglo[$cont] = $mayor; //arreglo de numeros.
+                            $pares[$cont] = "$j y $i"; // Arreglo de factores.
                             $cont++;
 
                             echo "<table border=1>";
@@ -115,7 +66,8 @@ echo "<h1>". "Los factores $parejas dan como resultado el palíndromo: ".$numMay
                 $numMayor;
                 $parejas;
                 $numMayor = $arreglo[0];
-
+                
+                //se hace la busqueda a el mayor numero de todo el arreglo y con este sus factores.
                 for ($i = 0; $i < count($arreglo); $i++) {
 
                     if ($arreglo[$i] > $numMayor) {
